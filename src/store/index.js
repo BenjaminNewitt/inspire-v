@@ -30,6 +30,15 @@ export default new Vuex.Store({
       } catch (error) {
         console.error(error);
       }
+    },
+
+    async getWeather({ commit, dispatch }) {
+      try {
+        let res = await api.get("weather");
+        commit("setResource", { name: "weather", data: res.data });
+      } catch (error) {
+        console.error(error);
+      }
     }
   },
   modules: {}
