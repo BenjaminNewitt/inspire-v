@@ -1,5 +1,6 @@
 <template>
-  <div class="home bg-light container-fluid">
+  <div class="home container-fluid">
+    <img class="bg-image" :src="backgroundImage.url" alt="" />
     <div class="row d-flex flex-row-reverse">
       <div class="col-4">WEATHER</div>
     </div>
@@ -22,6 +23,16 @@ export default {
   name: "Home",
   components: {
     HelloWorld
+  },
+  mounted() {
+    this.$store.dispatch("getBackgroundImage");
+  },
+  computed: {
+    backgroundImage() {
+      return this.$store.state.backgroundImage;
+    }
   }
 };
 </script>
+
+<style scoped></style>

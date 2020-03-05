@@ -4,7 +4,7 @@ import Axios from "axios";
 
 Vue.use(Vuex);
 
-let baseUrl = "//bcw-sandbox.herokuapp.com/;";
+let baseUrl = "//bcw-sandbox.herokuapp.com/";
 
 let api = Axios.create({
   baseURL: baseUrl + "api/",
