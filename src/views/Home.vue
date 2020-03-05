@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-12">CLOCK</div>
     </div>
-    <div class="row">
+    <div class="row align-bottom">
       <!-- <div class="col-4">IMAGE NAME</div> -->
       <div class="col-4"><quote></quote></div>
       <div class="col-4"><todo></todo></div>
@@ -46,6 +46,7 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100%;
 }
 .home {
   height: 100vh;
