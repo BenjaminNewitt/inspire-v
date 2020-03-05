@@ -20,6 +20,12 @@ export default new Vuex.Store({
   mutations: {
     setResource(state, payload) {
       state[payload.name] = payload.data;
+    },
+    setWeather(state, payload) {
+      payload.data.main.temp = Math.floor(
+        ((payload.data.main.temp - 273.15) * 9) / 5 + 32
+      );
+      state.weather = payload.data;
     }
   },
   actions: {
@@ -35,7 +41,7 @@ export default new Vuex.Store({
     async getWeather({ commit, dispatch }) {
       try {
         let res = await api.get("weather");
-        commit("setResource", { name: "weather", data: res.data });
+        commit("setWeather", { data: res.data });
       } catch (error) {
         console.error(error);
       }
