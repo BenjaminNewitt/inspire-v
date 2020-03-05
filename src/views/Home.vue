@@ -9,10 +9,12 @@
     <div class="row">
       <div class="col-12">CLOCK</div>
     </div>
-    <div class="row align-bottom">
-      <!-- <div class="col-4">IMAGE NAME</div> -->
-      <div class="col-4"><quote></quote></div>
-      <div class="col-4"><todo></todo></div>
+    <div class="row fixed-bottom">
+      <div class="col-3">
+        <p>{{ backgroundImage.site }}</p>
+      </div>
+      <div class="col-6"><quote></quote></div>
+      <div class="col-3"><todo></todo></div>
     </div>
   </div>
 </template>

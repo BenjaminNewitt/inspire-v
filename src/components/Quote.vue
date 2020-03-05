@@ -1,5 +1,5 @@
 <template>
-  <div class="quote">
+  <div class="quote text-center">
     <p>{{ quote.quote.body }}</p>
     <p>{{ quote.quote.author }}</p>
   </div>
