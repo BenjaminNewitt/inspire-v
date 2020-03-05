@@ -1,6 +1,6 @@
 <template>
   <div class="weather">
-    <h4>{{ weather.main.temp }}°</h4>
+    <h4>{{ weather.fahrenheit }}°</h4>
     <p>{{ weather.name }}</p>
   </div>
 </template>

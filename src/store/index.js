@@ -22,7 +22,7 @@ export default new Vuex.Store({
       state[payload.name] = payload.data;
     },
     setWeather(state, payload) {
-      payload.data.main.temp = Math.floor(
+      payload.data.fahrenheit = Math.floor(
         ((payload.data.main.temp - 273.15) * 9) / 5 + 32
       );
       state.weather = payload.data;
@@ -42,6 +42,15 @@ export default new Vuex.Store({
       try {
         let res = await api.get("weather");
         commit("setWeather", { data: res.data });
+      } catch (error) {
+        console.error(error);
+      }
+    },
+
+    async getQuote({ commit, dispatch }) {
+      try {
+        let res = await api.get("quotes");
+        commit("setResource", { name: "quote", data: res.data });
       } catch (error) {
         console.error(error);
       }
