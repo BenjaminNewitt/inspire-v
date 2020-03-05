@@ -1,6 +1,8 @@
 <template>
-  <div class="home container-fluid">
-    <img class="bg-image" :src="backgroundImage.url" alt="" />
+  <div
+    v-bind:style="{ backgroundImage: 'url(' + backgroundImage.url + ')' }"
+    class="home container-fluid bg-image"
+  >
     <div class="row d-flex flex-row-reverse">
       <div class="col-4">WEATHER</div>
     </div>
@@ -35,4 +37,13 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.bg-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.home {
+  height: 100vh;
+}
+</style>
