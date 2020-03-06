@@ -13,7 +13,7 @@
       <div class="col-12">
         <div class="row d-flex flex-row-reverse">
           <div class="col-3">
-            <todo></todo>
+            <todo v-if="todosOpened == true"></todo>
           </div>
         </div>
       </div>
@@ -21,7 +21,11 @@
         <p class="ml-5">{{ backgroundImage.site }}</p>
       </div>
       <div class="col-6"><quote></quote></div>
-      <div class="col-3"><p class="mr-5 text-right">Todo's</p></div>
+      <div class="col-3 text-right">
+        <button class="mr-2 btn btn-outline-light" @click="todoToggle">
+          Todo's
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -45,6 +49,20 @@ export default {
   computed: {
     backgroundImage() {
       return this.$store.state.backgroundImage;
+    }
+  },
+  data() {
+    return {
+      todosOpened: false
+    };
+  },
+  methods: {
+    todoToggle() {
+      if (this.todosOpened == false) {
+        this.todosOpened = true;
+      } else {
+        this.todosOpened = false;
+      }
     }
   }
 };

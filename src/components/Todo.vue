@@ -1,7 +1,9 @@
 <template>
   <div class="todo">
+    <p v-if="unfinishedTodos.length == 0">0 to do's</p>
     <p>{{ unfinishedTodos.length }} to do</p>
     <p v-for="todo in todos" :key="todo.id">{{ todo.description }}</p>
+    <p>New To Do</p>
   </div>
 </template>
 
