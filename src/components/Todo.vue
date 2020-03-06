@@ -4,4 +4,11 @@
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  name: "Todo",
+  mounted() {
+    this.$store.dispatch("getTodos");
+  }
+};
+</script>

@@ -15,7 +15,8 @@ export default new Vuex.Store({
   state: {
     backgroundImage: {},
     quote: {},
-    weather: {}
+    weather: {},
+    todos: []
   },
   mutations: {
     setResource(state, payload) {
@@ -51,6 +52,15 @@ export default new Vuex.Store({
       try {
         let res = await api.get("quotes");
         commit("setResource", { name: "quote", data: res.data });
+      } catch (error) {
+        console.error(error);
+      }
+    },
+
+    async getTodos({ commit, dispatch }) {
+      try {
+        let res = await api.get("benjamin/todos");
+        commit("setResource", { name: "todos", data: res.data.data });
       } catch (error) {
         console.error(error);
       }
