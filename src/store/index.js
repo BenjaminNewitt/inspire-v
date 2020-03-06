@@ -27,9 +27,13 @@ export default new Vuex.Store({
         ((payload.data.main.temp - 273.15) * 9) / 5 + 32
       );
       state.weather = payload.data;
+    },
+    addTodo(state, payload) {
+      state.todos.unshift(payload);
     }
   },
   actions: {
+    //#region
     async getBackgroundImage({ commit, dispatch }) {
       try {
         let res = await api.get("images");
@@ -61,6 +65,34 @@ export default new Vuex.Store({
       try {
         let res = await api.get("benjamin/todos");
         commit("setResource", { name: "todos", data: res.data.data });
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    //#endregion
+
+    async addTodo({ commit, dispatch }, payload) {
+      try {
+        let res = await api.post("benjamin/todos/" + payload);
+        dispatch("getTodos");
+      } catch (error) {
+        console.error(error);
+      }
+    },
+
+    async editTodo({ commit, dispatch }, todoId) {
+      try {
+        let res = await api.put("benjamin/todos/" + todoId);
+        dispatch("getTodos");
+      } catch (error) {
+        console.error(error);
+      }
+    },
+
+    async deleteTodo({ commit, dispatch }, todoId) {
+      try {
+        let res = await api.delete("benjamin/todos/" + todoId);
+        dispatch("getTodos");
       } catch (error) {
         console.error(error);
       }
