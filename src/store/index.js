@@ -74,7 +74,8 @@ export default new Vuex.Store({
     async addTodo({ commit, dispatch }, payload) {
       try {
         let res = await api.post("benjamin/todos/" + payload);
-        dispatch("getTodos");
+        // TODO check res for addTodo
+        // commit("addTodo", { data: res.data.data });
       } catch (error) {
         console.error(error);
       }
