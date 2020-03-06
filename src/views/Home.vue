@@ -7,14 +7,17 @@
       <div class="col-1"><weather></weather></div>
     </div>
     <div class="row">
-      <div class="col-12">CLOCK</div>
+      <div class="col-6 m-auto text-center">CLOCK</div>
+    </div>
+    <div class="row">
+      <div class="col-4"><todo></todo></div>
     </div>
     <div class="row fixed-bottom">
       <div class="col-3">
-        <p>{{ backgroundImage.site }}</p>
+        <p class="ml-5">{{ backgroundImage.site }}</p>
       </div>
       <div class="col-6"><quote></quote></div>
-      <div class="col-3"><todo></todo></div>
+      <div class="col-3"><p class="mr-5 text-right">Todo's</p></div>
     </div>
   </div>
 </template>
