@@ -1,6 +1,6 @@
 <template>
   <div class="todo">
-    <p>{{ todos.length }} to do</p>
+    <p>{{ unfinishedTodos.length }} to do</p>
     <p v-for="todo in todos" :key="todo.id">{{ todo.description }}</p>
   </div>
 </template>
@@ -14,6 +14,9 @@ export default {
   computed: {
     todos() {
       return this.$store.state.todos;
+    },
+    unfinishedTodos() {
+      return this.$store.state.todos.filter(t => t.completed == false);
     }
   }
 };
