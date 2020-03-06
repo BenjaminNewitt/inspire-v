@@ -9,10 +9,14 @@
     <div class="row">
       <div class="col-6 m-auto text-center">CLOCK</div>
     </div>
-    <div class="row">
-      <div class="col-4"><todo></todo></div>
-    </div>
     <div class="row fixed-bottom">
+      <div class="col-12">
+        <div class="row d-flex flex-row-reverse">
+          <div class="col-3">
+            <todo></todo>
+          </div>
+        </div>
+      </div>
       <div class="col-3">
         <p class="ml-5">{{ backgroundImage.site }}</p>
       </div>
@@ -54,6 +58,10 @@ export default {
   height: 100%;
 }
 .home {
+  height: 100vh;
+}
+
+.container-fluid {
   height: 100vh;
 }
 </style>

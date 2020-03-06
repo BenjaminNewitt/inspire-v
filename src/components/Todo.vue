@@ -1,5 +1,7 @@
 <template>
-  <div class="todo"></div>
+  <div class="todo">
+    <h2>TODOS</h2>
+  </div>
 </template>
 
 <script>
@@ -10,3 +12,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.todo {
+  background-color: rgba(41, 43, 44, 0.75);
+}
+</style>
