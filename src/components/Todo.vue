@@ -8,7 +8,9 @@
       :todoData="todo"
     ></todo-item>
     <!-- <p v-for="todo in todos" :key="todo.id">{{ todo.description }}</p> -->
-    <p>New To Do</p>
+    <button class="mr-2 btn btn-outline-light btn-sm">
+      New To Do
+    </button>
   </div>
 </template>
 

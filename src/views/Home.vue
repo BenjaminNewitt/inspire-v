@@ -21,8 +21,8 @@
         <p class="ml-5">{{ backgroundImage.site }}</p>
       </div>
       <div class="col-6"><quote></quote></div>
-      <div class="col-3 text-right">
-        <button class="mr-2 btn btn-outline-light" @click="todoToggle">
+      <div class="col-3 mt-2 text-right">
+        <button class="mr-2 btn btn-outline-light btn-sm" @click="todoToggle">
           Todo's
         </button>
       </div>
