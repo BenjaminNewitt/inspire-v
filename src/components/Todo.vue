@@ -1,5 +1,5 @@
 <template>
-  <div class="todo p-3">
+  <div class="todo p-3 mb-3">
     <p v-if="unfinishedTodos.length == 0">0 to do's</p>
     <p>{{ unfinishedTodos.length }} to do</p>
     <p v-for="todo in todos" :key="todo.id">{{ todo.description }}</p>
