@@ -80,9 +80,9 @@ export default new Vuex.Store({
       }
     },
 
-    async editTodo({ commit, dispatch }, todoId) {
+    async editTodo({ commit, dispatch }, payload) {
       try {
-        let res = await api.put("benjamin/todos/" + todoId);
+        let res = await api.put("benjamin/todos/" + payload._id, payload);
         dispatch("getTodos");
       } catch (error) {
         console.error(error);

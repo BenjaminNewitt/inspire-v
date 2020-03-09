@@ -5,6 +5,7 @@
       type="checkbox"
       id="checkbox"
       v-model="todoData.completed"
+      @click="toggleCompleted"
     />
     <p class="d-inline ml-2" v-if="todoData.completed == false">
       {{ todoData.description }}
@@ -18,6 +19,16 @@
 <script>
 export default {
   name: "TodoItem",
-  props: ["todoData"]
+  props: ["todoData"],
+  methods: {
+    toggleCompleted() {
+      if (this.todoData.completed == true) {
+        this.todoData.completed = false;
+      } else {
+        this.todoData.completed = true;
+      }
+      this.$store.dispatch("editTodo", this.todoData);
+    }
+  }
 };
 </script>
