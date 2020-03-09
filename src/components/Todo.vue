@@ -18,6 +18,14 @@
 import TodoItem from "@/components/TodoItem.vue";
 export default {
   name: "Todo",
+  data() {
+    return {
+      newTodo: {
+        description: "",
+        completed: false
+      }
+    };
+  },
   components: {
     TodoItem
   },
@@ -30,6 +38,13 @@ export default {
     },
     unfinishedTodos() {
       return this.$store.state.todos.filter(t => t.completed == false);
+    }
+  },
+  methods: {
+    addTodo() {
+      let todo = { ...this.newTodo };
+      this.$store.dispatch("addTodo", todo);
+      this.newTodo.description = "";
     }
   }
 };
