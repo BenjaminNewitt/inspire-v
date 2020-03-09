@@ -7,9 +7,19 @@
       :key="todo.id"
       :todoData="todo"
     ></todo-item>
-    <!-- <p v-for="todo in todos" :key="todo.id">{{ todo.description }}</p> -->
-    <button class="mr-2 btn btn-outline-light btn-sm">
+    <button
+      v-if="this.newTodoForm == false"
+      class="mr-2 btn btn-outline-light btn-sm"
+      @click="newTodoToggle"
+    >
       New To Do
+    </button>
+    <button
+      v-if="this.newTodoForm == true"
+      class="mr-2 btn btn-outline-light btn-sm"
+      @click="newTodoToggle"
+    >
+      Hide Form
     </button>
   </div>
 </template>
@@ -23,7 +33,8 @@ export default {
       newTodo: {
         description: "",
         completed: false
-      }
+      },
+      newTodoForm: false
     };
   },
   components: {
@@ -41,10 +52,18 @@ export default {
     }
   },
   methods: {
+    newTodoToggle() {
+      if (this.newTodoForm == false) {
+        this.newTodoForm = true;
+      } else {
+        this.newTodoForm = false;
+      }
+    },
     addTodo() {
       let todo = { ...this.newTodo };
       this.$store.dispatch("addTodo", todo);
       this.newTodo.description = "";
+      this.newTodoForm = false;
     }
   }
 };
