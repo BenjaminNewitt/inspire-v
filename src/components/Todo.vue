@@ -14,13 +14,25 @@
     >
       New To Do
     </button>
-    <button
-      v-if="this.newTodoForm == true"
-      class="mr-2 btn btn-outline-light btn-sm"
-      @click="newTodoToggle"
-    >
-      Hide Form
-    </button>
+    <form v-if="this.newTodoForm == true" @submit.prevent="addTodo">
+      <div class="form-row">
+        <div class="form-group col-10">
+          <input
+            v-model="newTodo.description"
+            type="text"
+            class="form-control form-control-sm d-inline"
+            placeholder="todo item"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-outline-light btn-sm d-inline col-2 border-0"
+        >
+          +
+        </button>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -31,8 +43,7 @@ export default {
   data() {
     return {
       newTodo: {
-        description: "",
-        completed: false
+        description: ""
       },
       newTodoForm: false
     };
@@ -62,8 +73,7 @@ export default {
     addTodo() {
       let todo = { ...this.newTodo };
       this.$store.dispatch("addTodo", todo);
-      this.newTodo.description = "";
-      this.newTodoForm = false;
+      // this.newTodo.description = "";
     }
   }
 };

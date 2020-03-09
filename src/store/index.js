@@ -29,7 +29,7 @@ export default new Vuex.Store({
       state.weather = payload.data;
     },
     addTodo(state, payload) {
-      state.todos.push(payload);
+      state.todos.push(payload.data);
     }
   },
   actions: {
@@ -73,7 +73,7 @@ export default new Vuex.Store({
 
     async addTodo({ commit, dispatch }, payload) {
       try {
-        let res = await api.post("benjamin/todos/" + payload);
+        let res = await api.post("benjamin/todos", payload);
         commit("addTodo", { data: res.data.data });
       } catch (error) {
         console.error(error);

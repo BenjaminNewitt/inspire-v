@@ -19,10 +19,5 @@
 export default {
   name: "TodoItem",
   props: ["todoData"]
-  // data() {
-  //   return {
-  //     checked: this.todoData.completed
-  //   };
-  // }
 };
 </script>
