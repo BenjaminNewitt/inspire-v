@@ -25,6 +25,7 @@
             type="text"
             class="form-control form-control-sm d-inline"
             placeholder="todo item"
+            maxlength="30"
             required
           />
         </div>

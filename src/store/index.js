@@ -7,8 +7,8 @@ Vue.use(Vuex);
 let baseUrl = "//bcw-sandbox.herokuapp.com/";
 
 let api = Axios.create({
-  baseURL: baseUrl + "api/",
-  timeout: 8000
+  baseURL: baseUrl + "api/"
+  // timeout: 8000
 });
 
 export default new Vuex.Store({
