@@ -9,7 +9,7 @@
           @click="toggleCompleted"
         />
       </div>
-      <div class="col-10 col-m-9">
+      <div class="col-9">
         <p v-if="todoData.completed == false">
           {{ todoData.description }}
         </p>
