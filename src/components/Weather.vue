@@ -1,7 +1,22 @@
 <template>
   <div class="weather">
-    <h4>{{ weather.fahrenheit }}°</h4>
-    <p>{{ weather.name }}</p>
+    <div class="row">
+      <div class="col-6">
+        <img
+          v-bind:src="
+            'http://openweathermap.org/img/wn/' +
+              weather.weather[0].icon +
+              '.png'
+          "
+          alt=""
+          class="weather-icon"
+        />
+      </div>
+      <div class="col-6">
+        <h4>{{ weather.fahrenheit }}°</h4>
+        <p>{{ weather.name }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
