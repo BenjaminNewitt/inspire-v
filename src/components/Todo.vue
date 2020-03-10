@@ -1,5 +1,5 @@
 <template>
-  <div class="todo p-3 mb-3">
+  <div class="todo p-3 mb-3 rounded-left">
     <p v-if="unfinishedTodos.length == 0">0 to do's</p>
     <p>{{ unfinishedTodos.length }} to do</p>
     <div class="row todo-items-row overflow-auto mb-3">
@@ -102,10 +102,6 @@ export default {
   max-height: 25vh;
   width: auto;
 }
-
-/* .todo-items-row::-webkit-scrollbar {
-  display: none;
-} */
 
 .close-form:hover {
   cursor: pointer;
