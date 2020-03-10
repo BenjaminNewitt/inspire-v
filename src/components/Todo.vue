@@ -12,30 +12,41 @@
     </div>
     <button
       v-if="this.newTodoForm == false"
-      class="mr-2 btn btn-outline-light btn-sm"
+      class=" mb-1 btn btn-outline-light"
       @click="newTodoToggle"
     >
       New To Do
     </button>
-    <form v-if="this.newTodoForm == true" @submit.prevent="addTodo">
-      <div class="row justify-content-start align-items-center">
-        <div class="col-8 p-1">
-          <input
-            v-model="newTodo.description"
-            type="text"
-            class="form-control  align-self-center"
-            placeholder="todo item"
-            maxlength="30"
-            required
-          />
-        </div>
-        <div class="col-1 p-1">
-          <button type="submit" class="btn btn-outline-light">
-            <i class="fas fa-plus"></i>
-          </button>
-        </div>
+    <div class="row d-flex flex-row">
+      <div class="col-10">
+        <form v-if="this.newTodoForm == true" @submit.prevent="addTodo">
+          <div class="row justify-content-start align-items-center">
+            <div class="col-8 p-1">
+              <input
+                v-model="newTodo.description"
+                type="text"
+                class="form-control  align-self-center"
+                placeholder="todo item"
+                maxlength="30"
+                required
+              />
+            </div>
+            <div class="col-1 p-1">
+              <button type="submit" class="btn btn-outline-light">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
-    </form>
+      <div class="col-1">
+        <i
+          v-if="this.newTodoForm == true"
+          class="fas fa-times text-danger close-form"
+          @click="newTodoToggle"
+        ></i>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -94,5 +105,9 @@ export default {
 
 .todo-items-row::-webkit-scrollbar {
   display: none;
+}
+
+.close-form:hover {
+  cursor: pointer;
 }
 </style>
