@@ -2,11 +2,14 @@
   <div class="todo p-3 mb-3">
     <p v-if="unfinishedTodos.length == 0">0 to do's</p>
     <p>{{ unfinishedTodos.length }} to do</p>
-    <todo-item
-      v-for="todo in todos"
-      :key="todo.id"
-      :todoData="todo"
-    ></todo-item>
+    <div class="row todo-items-row overflow-auto">
+      <todo-item
+        v-for="todo in todos"
+        :key="todo.id"
+        :todoData="todo"
+        class="col-12"
+      ></todo-item>
+    </div>
     <button
       v-if="this.newTodoForm == false"
       class="mr-2 btn btn-outline-light btn-sm"
@@ -82,5 +85,14 @@ export default {
 <style scoped>
 .todo {
   background-color: rgba(20, 21, 22, 0.801);
+}
+
+.todo-items-row {
+  max-height: 25vh;
+  width: auto;
+}
+
+.todo-items-row::-webkit-scrollbar {
+  display: none;
 }
 </style>

@@ -82,4 +82,5 @@ export default {
 .container-fluid {
   height: 100vh;
 }
+
 </style>
