@@ -103,11 +103,24 @@ export default {
   width: auto;
 }
 
-.todo-items-row::-webkit-scrollbar {
+/* .todo-items-row::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .close-form:hover {
   cursor: pointer;
+}
+
+.todo-items-row::-webkit-scrollbar {
+  width: 1em;
+}
+
+.todo-items-row::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.todo-items-row::-webkit-scrollbar-thumb {
+  background-color: #343a40;
+  outline: 1px solid #6c757d;
 }
 </style>
