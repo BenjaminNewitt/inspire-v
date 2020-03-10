@@ -7,7 +7,7 @@
       <div class="col-1"><weather></weather></div>
     </div>
     <div class="row">
-      <div class="col-6 m-auto text-center">CLOCK</div>
+      <div class="col-10 m-auto"><clock></clock></div>
     </div>
     <div class="row fixed-bottom">
       <div class="col-12">
@@ -35,13 +35,15 @@
 import Todo from "@/components/Todo.vue";
 import Weather from "@/components/Weather.vue";
 import Quote from "@/components/Quote.vue";
+import Clock from "@/components/Clock.vue";
 
 export default {
   name: "Home",
   components: {
     Quote,
     Weather,
-    Todo
+    Todo,
+    Clock
   },
   mounted() {
     this.$store.dispatch("getBackgroundImage");
@@ -82,5 +84,4 @@ export default {
 .container-fluid {
   height: 100vh;
 }
-
 </style>
