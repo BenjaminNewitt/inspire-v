@@ -18,7 +18,10 @@
         </p>
       </div>
       <div class="col-1">
-        <i class=" fas fa-times text-danger delete-button"></i>
+        <i
+          class=" fas fa-times text-danger delete-button"
+          @click="deleteTodo"
+        ></i>
       </div>
     </div>
   </div>
@@ -36,6 +39,9 @@ export default {
         this.todoData.completed = true;
       }
       this.$store.dispatch("editTodo", this.todoData);
+    },
+    deleteTodo() {
+      this.$store.dispatch("deleteTodo", this.todoData._id);
     }
   }
 };
@@ -44,5 +50,9 @@ export default {
 <style scoped>
 .delete-button {
   text-align: right;
+}
+
+.delete-button:hover {
+  cursor: pointer;
 }
 </style>
