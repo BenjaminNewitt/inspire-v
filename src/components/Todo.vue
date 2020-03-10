@@ -2,7 +2,7 @@
   <div class="todo p-3 mb-3">
     <p v-if="unfinishedTodos.length == 0">0 to do's</p>
     <p>{{ unfinishedTodos.length }} to do</p>
-    <div class="row todo-items-row overflow-auto">
+    <div class="row todo-items-row overflow-auto mb-3">
       <todo-item
         v-for="todo in todos"
         :key="todo.id"
