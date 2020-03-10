@@ -18,23 +18,22 @@
       New To Do
     </button>
     <form v-if="this.newTodoForm == true" @submit.prevent="addTodo">
-      <div class="form-row">
-        <div class="form-group col-10">
+      <div class="row justify-content-start align-items-center">
+        <div class="col-8 p-1">
           <input
             v-model="newTodo.description"
             type="text"
-            class="form-control form-control-sm d-inline"
+            class="form-control  align-self-center"
             placeholder="todo item"
             maxlength="30"
             required
           />
         </div>
-        <button
-          type="submit"
-          class="btn btn-outline-light btn-sm d-inline col-2 border-0"
-        >
-          +
-        </button>
+        <div class="col-1 p-1">
+          <button type="submit" class="btn btn-outline-light">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
       </div>
     </form>
   </div>
@@ -77,7 +76,7 @@ export default {
     addTodo() {
       let todo = { ...this.newTodo };
       this.$store.dispatch("addTodo", todo);
-      // this.newTodo.description = "";
+      this.newTodo.description = "";
     }
   }
 };
