@@ -1,18 +1,26 @@
 <template>
   <div class="todo-item">
-    <input
-      class="d-inline"
-      type="checkbox"
-      id="checkbox"
-      v-model="todoData.completed"
-      @click="toggleCompleted"
-    />
-    <p class="d-inline ml-2" v-if="todoData.completed == false">
-      {{ todoData.description }}
-    </p>
-    <p class="d-inline ml-2 text-muted" v-if="todoData.completed == true">
-      <del>{{ todoData.description }}</del>
-    </p>
+    <div class="row">
+      <div class="col-1">
+        <input
+          type="checkbox"
+          id="checkbox"
+          v-model="todoData.completed"
+          @click="toggleCompleted"
+        />
+      </div>
+      <div class="col-9">
+        <p v-if="todoData.completed == false">
+          {{ todoData.description }}
+        </p>
+        <p class="text-muted" v-if="todoData.completed == true">
+          <del>{{ todoData.description }}</del>
+        </p>
+      </div>
+      <div class="col-1">
+        <i class=" fas fa-times text-danger delete-button"></i>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -32,3 +40,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.delete-button {
+  text-align: right;
+}
+</style>
