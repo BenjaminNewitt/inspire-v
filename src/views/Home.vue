@@ -7,7 +7,9 @@
       <div class="col-1"><weather></weather></div>
     </div>
     <div class="row">
-      <div class="col-10 m-auto"><clock></clock></div>
+      <div class="col-10 m-auto justify-content-center text-center">
+        <clock></clock>
+      </div>
     </div>
     <div class="row fixed-bottom">
       <div class="col-12">
