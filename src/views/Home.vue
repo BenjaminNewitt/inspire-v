@@ -7,7 +7,9 @@
       <div class="col-1"><weather></weather></div>
     </div>
     <div class="row">
-      <div class="col-10 m-auto justify-content-center text-center">
+      <div
+        class="col-5 col-md-3 m-auto justify-content-center text-center clock-col rounded"
+      >
         <clock></clock>
       </div>
     </div>
@@ -85,5 +87,9 @@ export default {
 
 .container-fluid {
   height: 100vh;
+}
+
+.clock-col {
+  background-color: rgba(20, 21, 22, 0.801);
 }
 </style>

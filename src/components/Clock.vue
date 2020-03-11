@@ -1,7 +1,7 @@
 <template>
   <div class="clock">
     <!-- <h1 class="text-center">{{ moment(date).format("LT") }}</h1> -->
-    <digital-clock :twelveHour="true" />
+    <digital-clock :twelveHour="true" style="font-size: 5rem;" />
   </div>
 </template>
 
