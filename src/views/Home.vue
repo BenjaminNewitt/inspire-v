@@ -26,7 +26,7 @@
       </div>
       <div class="col-6"><quote></quote></div>
       <div class="col-3 mt-2 text-right">
-        <button class="shadow-sm mr-2 btn btn-light btn-sm" @click="todoToggle">
+        <button class="shadow-sm mr-2 btn btn-dark btn-sm" @click="todoToggle">
           Todo's
         </button>
       </div>
